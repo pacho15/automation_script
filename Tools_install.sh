@@ -27,6 +27,12 @@ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=$HOME/go'	>> ~/.bashrc			
 echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bashrc	
 source .bashrc
+if command -v go >/dev/null 2>&1 ; then
+    echo "Golang installed successfully"
+else
+    echo "Failed to install Golang"
+fi
+
 
 # Install Subfinder
 echo "[*] Installing Subfinder..."
@@ -41,13 +47,17 @@ else
     fi
 fi
 
-
 # Install Amass
 echo "[*] Installing Amass..."
 if command -v amass >/dev/null 2>&1 ; then
     echo "Amass already installed"
 else
     snap install amass
+fi
+if command -v amass >/dev/null 2>&1 ; then
+    echo "Amass installed successfully"
+else
+    echo "Failed to install Amass"
 fi
 
 # Install Httpx
@@ -57,6 +67,11 @@ if command -v httpx >/dev/null 2>&1 ; then
 else
     snap istall httpx
 fi
+if command -v httpx >/dev/null 2>&1 ; then
+    echo "Httpx installed successfully"
+else
+    echo "Failed to install Httpx"
+fi
 
 # Install Masscan
 echo "[*] Installing Masscan..."
@@ -64,6 +79,11 @@ if command -v masscan >/dev/null 2>&1 ; then
     echo "Masscan already installed"
 else
     apt-get install -y masscan
+fi
+if command -v masscan >/dev/null 2>&1 ; then
+    echo "Masscan installed successfully"
+else
+    echo "Failed to install Masscan"
 fi
 
 # Install Anew
@@ -73,6 +93,11 @@ if command -v anew >/dev/null 2>&1 ; then
 else
     go install github.com/tomnomnom/anew@latest
 fi
+if command -v anew >/dev/null 2>&1 ; then
+    echo "Anew installed successfully"
+else
+    echo "Failed to install Anew"
+fi
 
 # Install Nmap
 echo "[*] Installing Nmap..."
@@ -80,6 +105,11 @@ if command -v nmap >/dev/null 2>&1 ; then
     echo "Nmap already installed"
 else
     apt-get install -y nmap
+fi
+if command -v nmap >/dev/null 2>&1 ; then
+    echo "Nmap installed successfully"
+else
+    echo "Failed to install Nmap"
 fi
 
 # Install Nabbu
@@ -89,6 +119,11 @@ if command -v naabu >/dev/null 2>&1 ; then
 else
     go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 fi
+if command -v naabu >/dev/null 2>&1 ; then
+echo "Nabbu installed successfully"
+else
+echo "Failed to install Nabbu"
+fi
 
 # Install Nuclei
 echo "[*] Installing Nuclei..."
@@ -96,6 +131,11 @@ if command -v nuclei >/dev/null 2>&1 ; then
     echo "Nuclei already installed"
 else
     go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+fi
+if command -v nuclei >/dev/null 2>&1 ; then
+    echo "Nuclei installed successfully"
+else
+    echo "Failed to install Nuclei"
 fi
 
 # Install Waybackurls
@@ -105,6 +145,11 @@ if command -v waybackurls >/dev/null 2>&1 ; then
 else
     go install github.com/tomnomnom/waybackurls@latest
 fi
+if command -v waybackurls >/dev/null 2>&1 ; then
+    echo "Waybackurls installed successfully"
+else
+    echo "Failed to install Waybackurls"
+fi
 
 # Install Gauplus
 echo "[*] Installing Gauplus..."
@@ -113,12 +158,22 @@ if command -v gauplus >/dev/null 2>&1 ; then
 else
     go install github.com/bp0lr/gauplus@latest
 fi
+if command -v gauplus >/dev/null 2>&1 ; then
+    echo "Gauplus installed successfully"
+else
+    echo "Failed to install Gauplus"
+fi
 
 echo "Installing Httprobe"
 if command -v httprobe >/dev/null 2>&1 ; then
     echo "Httprobe already installed"
 else
     go install github.com/tomnomnom/httprobe@latest
+fi
+if command -v httprobe >/dev/null 2>&1 ; then
+    echo "Httprobe installed successfully"
+else
+    echo "Failed to install Httprobe"
 fi
 
 echo "Installing GoBuster"
@@ -127,12 +182,10 @@ if command -v gobuster >/dev/null 2>&1 ; then
 else
     go install github.com/OJ/gobuster/v3@latest
 fi
-
-echo "Installing GauPlus"
-if command -v gauplus >/dev/null 2>&1 ; then
-    echo "GauPlus already installed"
+if command -v gobuster >/dev/null 2>&1 ; then
+    echo "GoBuster installed successfully"
 else
-    go install github.com/bp0lr/gauplus@latest
+    echo "Failed to install GoBuster"
 fi
 
 echo "Installing Gau"
@@ -141,12 +194,22 @@ if command -v gau >/dev/null 2>&1 ; then
 else
     go install github.com/lc/gau/v2/cmd/gau@latest
 fi
+if command -v gau >/dev/null 2>&1 ; then
+    echo "Gau installed successfully"
+else
+    echo "Failed to install Gau"
+fi
 
 echo "Installing FFUF"
 if command -v ffuf >/dev/null 2>&1 ; then
     echo "FFUF already installed"
 else
     go install github.com/ffuf/ffuf@latest
+fi
+if command -v ffuf >/dev/null 2>&1 ; then
+    echo "FFUF installed successfully"
+else
+    echo "Failed to install FFUF"
 fi
 
 echo "Installing Assetfinder"
@@ -155,12 +218,22 @@ if command -v assetfinder >/dev/null 2>&1 ; then
 else
     go install github.com/tomnomnom/assetfinder@latest
 fi
+if command -v assetfinder >/dev/null 2>&1 ; then
+    echo "Assetfinder installed successfully"
+else
+    echo "Failed to install Assetfinder"
+fi
 
 echo "Installing ShuffleDNS"
 if command -v shuffledns >/dev/null 2>&1 ; then
     echo "ShuffleDNS already installed"
 else
     go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
+fi
+if command -v shuffledns >/dev/null 2>&1 ; then
+    echo "ShuffleDNS installed successfully"
+else
+    echo "Failed to install ShuffleDNS"
 fi
 
 echo "Installing Katana"
@@ -169,6 +242,11 @@ if command -v katana >/dev/null 2>&1 ; then
 else
     go install github.com/projectdiscovery/katana/cmd/katana@latest
 fi
+if command -v katana >/dev/null 2>&1 ; then
+    echo "Katana installed successfully"
+else
+    echo "Failed to install Katana"
+fi
 
 echo "Installing GoSpider"
 if command -v gospider >/dev/null 2>&1 ; then
@@ -176,34 +254,44 @@ if command -v gospider >/dev/null 2>&1 ; then
 else
     go install github.com/jaeles-project/gospider@latest
 fi
+if command -v gospider >/dev/null 2>&1 ; then
+    echo "GoSpider installed successfully"
+else
+    echo "Failed to install GoSpider"
+fi
 
 echo "Installing Hakrawler"
 if command -v hakrawler >/dev/null 2>&1 ; then
-    echo "Hakrawler already installed"
+    echo "Katana already installed"
 else
     go install github.com/hakluke/hakrawler@latest
 fi
+if command -v hakrawler >/dev/null 2>&1 ; then
+    echo "hakrawler installed successfully"
+else
+    echo "Failed to install hakrawler"
+fi
+
+echo "Installing Hakrawler"
+if command -v hakrawler >/dev/null 2>&1 ; then
+    echo "Katana already installed"
+else
+    go install github.com/ommadawn46/katana
+fi
+if command -v hakrawler >/dev/null 2>&1 ; then
+    echo "hakrawler installed successfully"
+else
+    echo "Failed to install hakrawler"
+fi
 
 echo "Installing Freq"
-if command -v freq >/dev/null 2>&1 ; then
-    echo "Freq already installed"
-else
-    go install github.com/takshal/freq@latest
-fi
+go install github.com/takshal/freq@latest
 
 echo "Installing QSReplace"
-if command -v qsreplace >/dev/null 2>&1 ; then
-    echo "QSReplace already installed"
-else
-    go install github.com/tomnomnom/qsreplace@latest
-fi
+go install github.com/tomnomnom/qsreplace@latest
 
 echo "Installing Subjack"
-if command -v subjack >/dev/null 2>&1 ; then
-    echo "Subjack already installed"
-else
-    go install github.com/haccer/subjack@latest
-fi
+go install github.com/haccer/subjack@latest
 
 #Installing TOOLS
 echo "[*] Installing findomain"
@@ -304,9 +392,24 @@ if command -v masscan >/dev/null 2>&1 ; then
     echo "masscan already installed"
 else
    
+githubrep(){
+echo -e "\n- Installing Bhedak"
+cd && pip3 install bhedak > /dev/null 2>&1
+cd && pip3 install tldextract > /dev/null 2>&1
+which bhedak &> /dev/null && 
+if command -v bhedak &> /dev/null; then
+    echo -e "${GR}SUCCESS${RT}"
+else
+    echo -e "${YW}FAILED${RT}"
+fi
+}
+githubrep
 
 
-
+#installing Wordlists
+wget https://raw.githubusercontent.com/pacho15/Wordlist-collection/main/wordlistinstall.sh -O wordlistinstall.sh
+chmod +x wordlistinstall.sh
+./wordlistinstall.sh
 
 echo "All tools have been installed"
 
